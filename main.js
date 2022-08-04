@@ -121,22 +121,22 @@ const settings = {
 };
 
 const facePositions = {
-  PositiveZ: {x: 1, y: 1},
-  NegativeZ: {x: 3, y: 1},
-  PositiveX: {x: 2, y: 1},
-  NegativeX: {x: 0, y: 1},
-  PositiveY: {x: 1, y: 0},
-  NegativeY: {x: 1, y: 2}
+  PositiveZ0: {x: 1, y: 1},
+  NegativeZ1: {x: 3, y: 1},
+  PositiveX2: {x: 2, y: 1},
+  NegativeX3: {x: 0, y: 1},
+  PositiveY4: {x: 1, y: 0},
+  NegativeY5: {x: 1, y: 2}
 };
 
 /*
 const facePositions = {
-  PositiveZ: {x: 1, y: 1},
-  NegativeZ: {x: 3, y: 1},
-  PositiveX: {x: 2, y: 1},
-  NegativeX: {x: 0, y: 1},
-  PositiveY: {x: 1, y: 0},
-  NegativeY: {x: 1, y: 2}
+  PositiveZ0: {x: 1, y: 1},
+  NegativeZ1: {x: 3, y: 1},
+  PositiveX2: {x: 2, y: 1},
+  NegativeX3: {x: 0, y: 1},
+  PositiveY4: {x: 1, y: 0},
+  NegativeY5: {x: 1, y: 2}
 };
 */
 
