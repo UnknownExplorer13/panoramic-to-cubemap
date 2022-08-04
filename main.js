@@ -92,12 +92,12 @@ const settings = {
 };
 
 const facePositions = {
-  PosZ: {x: 1, y: 1},
-  NegZ: {x: 3, y: 1},
-  PosX: {x: 2, y: 1},
-  Negx: {x: 0, y: 1},
-  PosY: {x: 1, y: 0},
-  NegY: {x: 1, y: 2}
+  pz: {x: 1, y: 1},
+  nz: {x: 3, y: 1},
+  px: {x: 2, y: 1},
+  nx: {x: 0, y: 1},
+  py: {x: 1, y: 0},
+  ny: {x: 1, y: 2}
 };
 
 function loadImage() {
