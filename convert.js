@@ -122,32 +122,32 @@ function copyPixelLanczos(read, write) {
 }
 
 const orientations = {
-  PosZ: (out, x, y) => {
+  pz: (out, x, y) => {
     out.x = -1;
     out.y = -x;
     out.z = -y;
   },
-  NegZ: (out, x, y) => {
+  nz: (out, x, y) => {
     out.x = 1;
     out.y = x;
     out.z = -y;
   },
-  PosX: (out, x, y) => {
+  px: (out, x, y) => {
     out.x = x;
     out.y = -1;
     out.z = -y;
   },
-  NegX: (out, x, y) => {
+  nx: (out, x, y) => {
     out.x = -x;
     out.y = 1;
     out.z = -y;
   },
-  PosY: (out, x, y) => {
+  py: (out, x, y) => {
     out.x = -y;
     out.y = -x;
     out.z = 1;
   },
-  NegY: (out, x, y) => {
+  ny: (out, x, y) => {
     out.x = y;
     out.y = -x;
     out.z = -1;
