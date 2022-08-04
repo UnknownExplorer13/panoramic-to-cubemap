@@ -1,6 +1,6 @@
 # Panoramic To Cubemap
 
-https://jaxry.github.io/panorama-to-cubemap/
+https://unknownexplorer13.github.io/panoramic-to-cubemap/
 
 A web app which converts 360° panoramic images to six cube faces.
 
