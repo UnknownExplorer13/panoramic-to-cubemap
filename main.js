@@ -81,7 +81,7 @@ class CubeFace {
     this.anchor.href = url;
     this.anchor.download = `${this.faceName[2]}.${fileExtension}`;
     this.img.style.filter = '';
-	downloadList[parseInt(this.faceName[2],10)] = { Url:url, FileName: this.faceName[2]+"."+fileExtension}
+    downloadList[parseInt(this.faceName[2],10)] = { Url:url, FileName: this.faceName[2]+"."+fileExtension}
     console.log(JSON.stringify(downloadList))
   }
 }
@@ -121,22 +121,22 @@ const settings = {
 };
 
 const facePositions = {
-  PositiveZ0: {x: 1, y: 1},
-  NegativeZ1: {x: 3, y: 1},
-  PositiveX2: {x: 2, y: 1},
-  NegativeX3: {x: 0, y: 1},
-  PositiveY4: {x: 1, y: 0},
-  NegativeY5: {x: 1, y: 2}
+  NegativeX0: {x: 0, y: 1},
+  PositiveY1: {x: 1, y: 0},
+  PositiveZ2: {x: 1, y: 1},
+  NegativeY3: {x: 1, y: 2},
+  PositiveX4: {x: 2, y: 1},
+  NegativeZ5: {x: 3, y: 1}
 };
 
 /*
 const facePositions = {
-  PositiveZ0: {x: 1, y: 1},
-  NegativeZ1: {x: 3, y: 1},
-  PositiveX2: {x: 2, y: 1},
-  NegativeX3: {x: 0, y: 1},
-  PositiveY4: {x: 1, y: 0},
-  NegativeY5: {x: 1, y: 2}
+  PositiveZ2: {x: 1, y: 1},
+  NegativeZ5: {x: 3, y: 1},
+  PositiveX4: {x: 2, y: 1},
+  NegativeX0: {x: 0, y: 1},
+  PositiveY1: {x: 1, y: 0},
+  NegativeY3: {x: 1, y: 2}
 };
 */
 
