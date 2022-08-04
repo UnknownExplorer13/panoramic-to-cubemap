@@ -1,6 +1,33 @@
 const canvas = document.createElement('canvas');
 const ctx = canvas.getContext('2d');
 
+var downloadList = [{},{},{},{},{},{}]
+
+function downloadAll(urls) {
+  var link = document.createElement('a');
+
+  link.style.display = 'none';
+
+  document.body.appendChild(link);
+
+  for (var i = urls.length-1; i >= 0; i--) {
+    link.setAttribute('download', urls[i].FileName);
+    link.setAttribute('href', urls[i].Url);
+    link.click();
+    sleep(400)
+  }
+
+  document.body.removeChild(link);
+}
+
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
+
 class RadioInput {
   constructor(name, onChange) {
     this.inputs = document.querySelectorAll(`input[name=${name}]`);
@@ -52,8 +79,10 @@ class CubeFace {
 
   setDownload(url, fileExtension) {
     this.anchor.href = url;
-    this.anchor.download = `${this.faceName}.${fileExtension}`;
+    this.anchor.download = `${this.faceName[2]}.${fileExtension}`;
     this.img.style.filter = '';
+	downloadList[parseInt(this.faceName[2],10)] = { Url:url, FileName: this.faceName[2]+"."+fileExtension}
+    console.log(JSON.stringify(downloadList))
   }
 }
 
@@ -100,7 +129,19 @@ const facePositions = {
   NegativeY: {x: 1, y: 2}
 };
 
+/*
+const facePositions = {
+  PositiveZ: {x: 1, y: 1},
+  NegativeZ: {x: 3, y: 1},
+  PositiveX: {x: 2, y: 1},
+  NegativeX: {x: 0, y: 1},
+  PositiveY: {x: 1, y: 0},
+  NegativeY: {x: 1, y: 2}
+};
+*/
+
 function loadImage() {
+  downloadList = [{},{},{},{},{},{}]
   const file = dom.imageInput.files[0];
 
   if (!file) {
