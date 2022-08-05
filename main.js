@@ -94,7 +94,8 @@ function removeChildren(node) {
 
 const mimeType = {
   'jpg': 'image/jpeg',
-  'png': 'image/png'
+  'png': 'image/png',
+  'tiff': 'image/tiff'
 };
 
 function getDataURL(imgData, extension) {
