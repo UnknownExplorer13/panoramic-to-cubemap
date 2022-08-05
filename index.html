@@ -11,12 +11,22 @@
     body {
       margin: 1em auto;
       max-width: 800px;
-	  background: #181a1b;
-	  color: #e8e6e3;
+      background: #181a1b;
+      color: #e8e6e3;
     }
-	input {
-	  background: #181a1b;
-	  color: #e8e6e3;
+    ::-webkit-scrollbar {
+      background-color: #202324;
+      color: #aba499;
+    }
+    ::-webkit-scrollbar-corner {
+      background-color: #181a1b;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #454a4d;
+    }
+    input {
+      background: #181a1b;
+      color: #e8e6e3;
     }
     .settings > * {
       margin-top: 12px;
@@ -42,7 +52,7 @@
 
   <main>
     <section>
-      <h2>Upload</h2>
+      <h2><u>Upload</u></h2>
       <label>Upload a panoramic image: <input id="imageInput" type="file" accept="image/*"></label>
       <ul>
         <li>The image must be formatted with equirectangular projection.</li>
@@ -52,25 +62,28 @@
     </section>
 
     <section class="settings">
-      <h2>Settings</h2>
-      <div>
-        <label>Cube Rotation: <input id="cubeRotation" type="number" min="0" max="359" value="0">°</label>
-      </div>
-      <fieldset title="The resampling algorithm to use when generating the cubemap.">
-        <legend>Interpolation Type</legend>
+      <h2><u>Settings</u></h2>
+	  <fieldset>
+	    <legend>Cube Rotation - <small>The angles the cubemap will be rotated on.</small></legend>
+        <label>Pitch (Up/Down)：<input id="cube-rotation-pitch" type="number" min="0" max="359" value="0">°</label>
+        <label>Yaw (Left/Right)：<input id="cube-rotation-yaw" type="number" min="0" max="359" value="0">°</label>
+        <label>Roll (Rotate Image)：<input id="cube-rotation-roll" type="number" min="0" max="359" value="0">°</label>
+	  </fieldset>
+      <fieldset>
+        <legend>Interpolation Type - <small>The resampling algorithm to use when generating the cubemap.</small></legend>
         <label><input type="radio" name="interpolation" value="lanczos" checked>Lanczos (Best but Slower)</label>
         <label><input type="radio" name="interpolation" value="cubic">Cubic (Sharper Details)</label>
         <label><input type="radio" name="interpolation" value="linear">Linear (Softer Details)</label>
       </fieldset>
       <fieldset>
-        <legend>Output Format</legend>
+        <legend>Output Format - <small>File format to use when downloaded.</small></legend>
         <label><input type="radio" name="format" value="png" checked>PNG</label>
         <label><input type="radio" name="format" value="jpg">JPEG</label>
       </fieldset>
     </section>
 
     <section>
-      <h2>Output</h2>
+      <h2><u>Output</u></h2>
       <p>Click each cube face to save them to your computer or use the button below to download them all at once.</p>
       <button onclick="downloadAll(window.downloadList)">Download All</button>
       <div id="cubemap">
@@ -91,5 +104,6 @@
   </footer>
 
   <script src="main.js"></script>
+  <script src="convert.js"></script>
 </body>
 </html>

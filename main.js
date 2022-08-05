@@ -115,7 +115,9 @@ const dom = {
 dom.imageInput.addEventListener('change', loadImage);
 
 const settings = {
-  cubeRotation: new Input('cubeRotation', loadImage),
+  pitch: new Input('cube-rotation-pitch', loadImage),
+  yaw: new Input('cube-rotation-yaw', loadImage),
+  roll: new Input('cube-rotation-roll', loadImage),
   interpolation: new RadioInput('interpolation', loadImage),
   format: new RadioInput('format', loadImage),
 };
@@ -172,14 +174,17 @@ function renderFace(data, faceName, position) {
   const face = new CubeFace(faceName);
   dom.faces.appendChild(face.anchor);
 
+  const toRad = x => Math.PI * x / 180;
   const options = {
     data: data,
     face: faceName,
-    rotation: Math.PI * settings.cubeRotation.value / 180,
+    rotation: { pitch: toRad(settings.pitch.value), yaw: toRad(settings.yaw.value), roll: toRad(settings.roll.value) },
     interpolation: settings.interpolation.value,
   };
 
-  const worker = new Worker('convert.js');
+  // https://stackoverflow.com/questions/21408510/chrome-cant-load-web-worker
+  // const worker = new Worker('convert.js');
+  const worker = new Worker(URL.createObjectURL(new Blob(["("+workerScope.toString()+")()"], {type: 'text/javascript'})));
 
   const setDownload = ({data: imageData}) => {
     const extension = settings.format.value;
