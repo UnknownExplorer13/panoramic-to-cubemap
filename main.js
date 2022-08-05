@@ -27,7 +27,6 @@ function sleep(milliseconds) {
     currentDate = Date.now();
   } while (currentDate - date < milliseconds);
 }
-
 class RadioInput {
   constructor(name, onChange) {
     this.inputs = document.querySelectorAll(`input[name=${name}]`);
