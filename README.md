@@ -22,3 +22,6 @@ K.F ([UnknownExplorer13](https://github.com/UnknownExplorer13))
 
 Michael Coxe ([mdcoxe](https://github.com/mdcoxe))
 * Original implementation of the "Download All" button
+
+Lanyi ([lanyizi](https://github.com/lanyizi))
+* Original implementation of the pitch, roll, & yaw rotation angles
