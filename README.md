@@ -7,7 +7,7 @@ A web app which converts 360° panoramic images to six cube faces.
 ## FEATURES
 * Runs in your browser by using the Canvas API to manipulate image data.
 * Uses Lanczos interpolation for high quality output.
-* Ability to rotate cubemap to control the orientation of the scene.
+* Ability to rotate cubemap to control the orientation of the scene and format of the cubemap.
 * Includes a .bat file for offline usage. Requires [Python](https://www.python.org/) with the [Simple HTTP Server](https://pypi.org/project/simple-http-server/) module (version 0.18.3).
 
 ## CREDITS
