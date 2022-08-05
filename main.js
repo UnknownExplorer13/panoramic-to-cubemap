@@ -27,6 +27,7 @@ function sleep(milliseconds) {
     currentDate = Date.now();
   } while (currentDate - date < milliseconds);
 }
+
 class RadioInput {
   constructor(name, onChange) {
     this.inputs = document.querySelectorAll(`input[name=${name}]`);
@@ -78,9 +79,9 @@ class CubeFace {
 
   setDownload(url, fileExtension) {
     this.anchor.href = url;
-    this.anchor.download = `${this.faceName[2]}.${fileExtension}`;
+    this.anchor.download = `${this.faceName.substring(0,9)}.${fileExtension}`;
     this.img.style.filter = '';
-    downloadList[parseInt(this.faceName[2],10)] = { Url:url, FileName: this.faceName[2]+"."+fileExtension}
+    downloadList[parseInt(this.faceName[9],10)] = {Url:url, FileName: this.faceName.substring(0,9)+"."+fileExtension}
     console.log(JSON.stringify(downloadList))
   }
 }
@@ -120,24 +121,13 @@ const settings = {
 };
 
 const facePositions = {
-  NegativeX0: {x: 0, y: 1},
-  PositiveY1: {x: 1, y: 0},
-  PositiveZ2: {x: 1, y: 1},
-  NegativeY3: {x: 1, y: 2},
-  PositiveX4: {x: 2, y: 1},
-  NegativeZ5: {x: 3, y: 1}
+  PositiveZ0: {x: 1, y: 1},
+  NegativeZ1: {x: 3, y: 1},
+  PositiveX2: {x: 2, y: 1},
+  NegativeX3: {x: 0, y: 1},
+  PositiveY4: {x: 1, y: 0},
+  NegativeY5: {x: 1, y: 2}
 };
-
-/*
-const facePositions = {
-  PositiveZ2: {x: 1, y: 1},
-  NegativeZ5: {x: 3, y: 1},
-  PositiveX4: {x: 2, y: 1},
-  NegativeX0: {x: 0, y: 1},
-  PositiveY1: {x: 1, y: 0},
-  NegativeY3: {x: 1, y: 2}
-};
-*/
 
 function loadImage() {
   downloadList = [{},{},{},{},{},{}]
