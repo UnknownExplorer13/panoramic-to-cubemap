@@ -17,6 +17,7 @@ Lucas Crane ([jaxry](https://github.com/jaxry))
 K.F ([UnknownExplorer13](https://github.com/UnknownExplorer13))
 * Logo
 * Dark Mode
+* Website Revamp
 * Batch file for offline usage
 * Compilation and adaptation of other's code
 
